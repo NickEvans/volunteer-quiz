@@ -1,0 +1,30 @@
+.zoom-effect {
+    overflow: hidden;
+}
+.zoom-effect img { 
+    transition: transform .25s ease;
+}
+.zoom-effect:hover img {
+    transform: scale(1.25);
+}
+.disabled img {
+    opacity: 0.35;
+}
+.quiz-choice {
+    cursor: pointer;
+}
+.card-body {
+    text-align: center;
+}
+ul {
+    list-style: none;
+}
+.result {
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+}
+.resultComplete {
+    background: #23b85c;
+    margin: 25px auto;
+}
