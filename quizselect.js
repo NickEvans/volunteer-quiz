@@ -19,21 +19,25 @@ var Quiz = function() {
     }
 
     this._isComplete = function() {
+        //adds to the answers when the quiz choice is active
         var answersChosen = 0;
         $("ul[data-quiz-question]").each(function() {
             if($(this).find(".quiz-choice.active").length > 0) {
                 answersChosen++;
             }
         });
+            // returns the answers the usr chooses, when the total amount of answers chosen are equal to 4 or more
         return (answersChosen >= QUIZLENGTH);
     }
 
     this._tallyResult = function() {
+        //creates an array of each answered question
         var choiceList = new Array();
         $("ul[data-quiz-question]").each(function() {
+            //adds a value from choice-value to the array choiceList when quiz-choice is toggled active by the user
             choiceList.push($(this).find(".quiz-choice.active").data("choice-value"));
         } );
-
+        //returns the array
         return choiceList;
     }
 
@@ -58,24 +62,31 @@ var Quiz = function() {
         const opass = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e", "f"], ["c", "e"], ["a", "f"]);
         //orgsAnswers[9] = Public Allies
         const publicAllies = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e", "f"], ["c", "e"], ["c", "f"]);
-
+        // master array
         const orgsAnswers = new Array(teachForAmerica, peaceCorps, opAmeriCorps, natHealthCorps, orlandoCares, cityYear, flCC, natCCC, opass, publicAllies);
-
+        
+        // sets usr to the array form ._tallyResult
         const usr = this._tallyResult();
-
+        //initializes the final array    
         var finalResult = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-
+        
         function addPoints(choice, j) {
+        // traverses through master array
             for(var i=0; i<orgsAnswers.length; i++) {
+                //checks if it matches the choice from the user
                 if(orgsAnswers[i][j].includes(choice)) {
+                    // adds match to final result
                     finalResult[i]++;
                 }
             }
         }
-
+        // traverses through final resulting match array to find the index with the max amount of matches
         function maxIndex(a) {
             var i = 0, index = 0, max = 0;
             while(i < a.length) {
+                /* if the array's index is greater than the prev. max value,
+                 set max value to index' value and returns the index with most matches to the user
+                 */
                 if(a[i] > max) {
                     max = a[i];
                     index = i;
@@ -84,7 +95,7 @@ var Quiz = function() {
             }
             return index;
         }
-
+        //calls addPoints for each question the usr answers
         usr.forEach(addPoints);
         
         console.log(finalResult);
@@ -112,6 +123,7 @@ var Quiz = function() {
         });
 
         $(".quiz-choice").on("click", function() {
+            //
             var $choice = $(this);
             var $question = $choice.closest("ul[data-quiz-question]");
             self._selectAnswer($choice, $question);
