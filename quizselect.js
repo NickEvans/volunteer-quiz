@@ -2,6 +2,8 @@
 //Number of quiz questions
 const QUIZLENGTH = 4;
 
+const ORGNAMES = new Array("Teach For America", "Peace Corps", "Operation AmeriCorps", "National Health Corps", "Orlando Cares", "City Year", "Florida Conservation Corps", "National Civilian Community Corps", "Orlando Partnership for School Success", "Public Allies");
+
 var Quiz = function() {
     var self = this;
     this.init = function() {
@@ -41,6 +43,7 @@ var Quiz = function() {
     }
 
     this._calcResult = function() {
+
         // orgsAnswers[0] = Teach for America
         const teachForAmerica = new Array(["a", "b", "c", "d", "e"], ["a", "b", "e"], ["c", "e"], ["a"]);
         // orgsAnswers[1] = Peace Corps
@@ -99,15 +102,14 @@ var Quiz = function() {
         }
 
         userChoices.forEach(addPoints);
-        
-        console.log(finalPoints);
-        console.log("Result: index " + randomMaxIndex(finalPoints));
+
+        return randomMaxIndex(finalPoints);
     }
 
     this._showResult = function() {
         var $resultBox = $(".result");
         $resultBox.addClass("resultComplete jumbotron h1"); /*TODO: Select based on result */
-        $resultBox.html("Here is your result!<br> You selected: " + self._tallyResponses()); /*TODO: Content based on result */
+        $resultBox.html("<p>Here is your result!</p> <p>You matched with <u>" + ORGNAMES[self._calcResult()] + "</u></p>"); /*TODO: Content based on result */
 
         //Animated croll
         $("body, html").animate(
@@ -128,8 +130,6 @@ var Quiz = function() {
             self._selectAnswer($choice, $question);
 
             if(self._isComplete()) {
-                console.log("Quiz completed");
-                self._calcResult();
                 self._showResult();
                 return;
             }
