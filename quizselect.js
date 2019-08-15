@@ -4,6 +4,30 @@ const QUIZLENGTH = 4;
 
 const ORGNAMES = new Array("Teach For America", "Peace Corps", "Operation AmeriCorps", "National Health Corps", "Orlando Cares", "City Year", "Florida Conservation Corps", "National Civilian Community Corps", "Orlando Partnership for School Success", "Public Allies");
 
+const ORGINFO = [ 
+
+    { name: "Teach For America", info: "We're a non-profit, leadership development organization that helps young leaders use their talents to end educational inequality in America. In the long-term, our network of more than 50,000 leaders continue to channel their collective talents to create the systemic-level change needed for kids across the country." } ,
+
+    { name: "Peace Corps", info: "Peace Corps is a catalyst for grassroots international development and cultural exchange powered by volunteers ready to use their energy, ingenuity, and skills to work towards reducing inequality and creating opportunities in communities around the world." } ,
+
+    { name: "Operation AmeriCorps", info: "A collaborative partnership between the City of Orlando, Orange Country Public Schools, and After-School All-Stars, the goal of Operation AmeriCorps is to use national service to ensure high school graduation and a post high school pathway for targeted students. Members will work with students and be responsible for promoting academic, social, and personal success." } ,
+
+    { name: "National Health Corps", info: "National Health Corps has worked to expand access to health care and health education in underserved communities for more than 20 years. Members will work to provide health screenings and education to those in need." } ,
+
+    { name: "Orlando Cares", info: "Orlando Cares works to address community issues through volunteerism. Volunteers serve at City Hall or at local nonprofit organizations to develop programs to recruit, screen, train, engage, and monitor volunteers from the community." } ,
+
+    { name: "City Year", info: "CityYear is a gap year program from AmeriCorps that invites young leaders to serve a year as a tutor and mentor to students Central Florida in K-12 schools and communities. It is a great opportunity for servant leadership, civic engagement, and for promoting education in our community." } ,
+
+    { name: "Florida Conservation Corps", info: "Florida Conservation Corps provides hands-on service learning opportunities designed to develop leaders in the fields of cultural preservation, land management, and regional outreach through their A.N.T, T.R.E.C, & R.O.A.R programs. Volunteers develop confidence, knowledge and abilities necessary to become better environmentalists, conservationists, and stewards of their community and environment." } ,
+
+    { name: "National Civilian Community Corps", info: "AmeriCorps National Civilian Community Coprs & FEMA Corps is a full-time, residential, team-based program for young adults between 18-24 that runs for 10-12 months compromised of teams of 8-10 members. This orgination focuses on disaster relief, infrastructure improvement, environmental stewardship, and urban and rural development." } ,
+
+    { name: "Orlando Partnership for School Success", info: "Orlando-Partnership for School Success is a collaborative partnership between the Citt of Orlando, Orange County Public School and After-School Alll-Stars. The mission of the project is to expand academic and social supports for at-risk youth in high poverty neighborhoods during the school day, after school and in summer. Each volunteer is assigned 40 children for whom they will be responsible for promoting their academic, social, and personal success for one year. Best suited for bilingual, community driven individuals" } ,
+
+    { name: "Public Allies", info: "Public Allies Central Florida is a 10 month long full-time apprenticeship at a local nonprofit as well as a leadership development program. Best for individuals who want to rpomote social justice and social equity by engaging with their community." }
+
+]
+
 var Quiz = function() {
     var self = this;
     this.init = function() {
@@ -108,8 +132,9 @@ var Quiz = function() {
 
     this._showResult = function() {
         var $resultBox = $(".result");
-        $resultBox.addClass("resultComplete jumbotron h1"); /*TODO: Select based on result */
-        $resultBox.html("<p>Here is your result!</p> <p>You matched with <u>" + ORGNAMES[self._calcResult()] + "</u></p>"); /*TODO: Content based on result */
+        var result = self._calcResult();
+        $resultBox.addClass("resultComplete jumbotron"); 
+        $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[result].name + "</u></p></h1> <hr class='my-4'> <p>" + ORGINFO[result].info + "</p>"); 
 
         //Animated croll
         $("body, html").animate(
