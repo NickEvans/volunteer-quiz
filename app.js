@@ -88,3 +88,5 @@ const findMax = (arr) => {
 }
 console.log(getPts(orgsAnswers)); // This prints the array of pts for each organization to the console
 console.log(findMax(getPts(orgsAnswers))); //this prints the result of which of the indices of the array is the highest
+
+/// Some code for creating a dialouge pop-up
