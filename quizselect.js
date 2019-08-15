@@ -22,9 +22,9 @@ const ORGINFO = [
 
     { name: "National Civilian Community Corps", info: "AmeriCorps National Civilian Community Coprs & FEMA Corps is a full-time, residential, team-based program for young adults between 18-24 that runs for 10-12 months compromised of teams of 8-10 members. This orgination focuses on disaster relief, infrastructure improvement, environmental stewardship, and urban and rural development." } ,
 
-    { name: "Orlando Partnership for School Success", info: "Description" } ,
+    { name: "Orlando Partnership for School Success", info: "Orlando-Partnership for School Success is a collaborative partnership between the Citt of Orlando, Orange County Public School and After-School Alll-Stars. The mission of the project is to expand academic and social supports for at-risk youth in high poverty neighborhoods during the school day, after school and in summer. Each volunteer is assigned 40 children for whom they will be responsible for promoting their academic, social, and personal success for one year. Best suited for bilingual, community driven individuals" } ,
 
-    { name: "Public Allies", info: "Description" }
+    { name: "Public Allies", info: "Public Allies Central Florida is a 10 month long full-time apprenticeship at a local nonprofit as well as a leadership development program. Best for individuals who want to rpomote social justice and social equity by engaging with their community." }
 
 ]
 
