@@ -4,6 +4,20 @@ const QUIZLENGTH = 4;
 
 const ORGNAMES = new Array("Teach For America", "Peace Corps", "Operation AmeriCorps", "National Health Corps", "Orlando Cares", "City Year", "Florida Conservation Corps", "National Civilian Community Corps", "Orlando Partnership for School Success", "Public Allies");
 
+const ORGINFO = [ 
+
+    { name: "Teach For America", info: "We're a non-profit, leadership development organization that helps young leaders use their talents to end educational inequality in America. In the long-term, our network of more than 50,000 leaders continue to channel their collective talents to create the systemic-level change needed for kids across the country." } ,
+
+    { name: "Peace Corps", info: "Peace Corps is a catalyst for grassroots international development and cultural exchange powered by volunteers ready to use their energy, ingenuity, and skills to work towards reducing inequality and creating opportunities in communities around the world." } ,
+
+    { name: "Operation AmeriCorps", info: "A collaborative partnership between the City of Orlando, Orange Country Public Schools, and After-School All-Stars, the goal of Operation AmeriCorps is to use national service to ensure high school graduation and a post high school pathway for targeted students. Members will work with students and be responsible for promoting academic, social, and personal success." } ,
+
+    { name: "National Health Corps", info: "National Health Corps has worked to expand access to health care and health education in underserved communities for more than 20 years. Members will work to provide health screenings and education to those in need." } ,
+
+    { name: "Orlando Cares", info: "Orlando Cares works to address community issues through volunteerism. Volunteers serve at City Hall or at local nonprofit organizations to develop programs to recruit, screen, train, engage, and monitor volunteers from the community." }
+
+]
+
 var Quiz = function() {
     var self = this;
     this.init = function() {
@@ -108,8 +122,9 @@ var Quiz = function() {
 
     this._showResult = function() {
         var $resultBox = $(".result");
-        $resultBox.addClass("resultComplete jumbotron h1"); /*TODO: Select based on result */
-        $resultBox.html("<p>Here is your result!</p> <p>You matched with <u>" + ORGNAMES[self._calcResult()] + "</u></p>"); /*TODO: Content based on result */
+        var result = self._calcResult();
+        $resultBox.addClass("resultComplete jumbotron"); 
+        $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[result].name + "</u></p></h1> <hr class='my-4'> <p>" + ORGINFO[result].info + "</p>"); 
 
         //Animated croll
         $("body, html").animate(
