@@ -22,6 +22,9 @@ ul {
 .result {
     color: #fff;
 }
+.result a{
+    color: #fff;
+}
 .resultComplete {
     background: #23b85c;
 }
