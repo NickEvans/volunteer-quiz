@@ -190,7 +190,7 @@ var Quiz = function () {
         for (let i = 0; i < maxes.length; i++) {
             $('.result').append('<b><li>' + maxes[i] + '</li></b>');
         }
-        $resultBox.append('</ul>')
+        $resultBox.append('</ul> <br> <p>Schedule a consultation with <a href="mailto:Rahsaan.Graham@ucf.edu">Rahsaan.Graham@ucf.edu</a> to learn more about your program and many others!</p>')
     //Animated croll
     $("body, html").animate({
         scrollTop: (($resultBox).offset().top - 25) //25px padding
