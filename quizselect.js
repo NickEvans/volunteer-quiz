@@ -178,12 +178,12 @@ var Quiz = function () {
         let result = self._randResult(self._calcResult()); // prints out a random number like 8
        
         let maxes = self._printMaxes();// returns an array of strings of org names
-        this._removeMaxResult = function(arr){
-            return arr != ORGNAMES[result];
-        }
-
-        self._removeMaxResult(self._printMaxes());
-        maxes.filter(self._removeMaxResult);
+      
+        // removes the rand Max
+        for (let i = 0; i < maxes.length; i++) {
+            if (maxes[i] === ORGNAMES[result])
+                maxes.splice(i, 1); 
+            }
        
         $resultBox.addClass("resultComplete jumbotron");
         $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGNAMES[result] + "</u> </h1> <p>" + ORGINFO[result].info +"</p>");
@@ -193,8 +193,9 @@ var Quiz = function () {
             for (let i = 0; i < maxes.length; i++) {
                 $resultBox.append('<b><li>' + maxes[i] + '</li></b>');
             }
-             }
-        $resultBox.append('</ul> <br> <p>Schedule a consultation with <b><a href="mailto:Rahsaan.Graham@ucf.edu">Rahsaan.Graham@ucf.edu</a></b> to learn more about your program and many others!</p>')
+            $resultBox.append('</ul><br>');
+            }
+        $resultBox.append('<p>Schedule a consultation with <b><a href="mailto:Rahsaan.Graham@ucf.edu">Rahsaan.Graham@ucf.edu</a></b> to learn more about your program and many others!</p>')
     //Animated croll
     $("body, html").animate({
         scrollTop: (($resultBox).offset().top - 25) //25px padding
