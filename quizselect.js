@@ -186,10 +186,14 @@ var Quiz = function () {
         maxes.filter(self._removeMaxResult);
        
         $resultBox.addClass("resultComplete jumbotron");
-        $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGNAMES[result] + "</u> </h1> <p>" + ORGINFO[result].info +"</p> <br/>   <h2><b> You also matched with:</b></h2> <ul>");
-        for (let i = 0; i < maxes.length; i++) {
-            $('.result').append('<b><li>' + maxes[i] + '</li></b>');
-        }
+        $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGNAMES[result] + "</u> </h1> <p>" + ORGINFO[result].info +"</p>");
+       //prevents adding only the randomized result to the bottom
+        if (maxes.length > 1){
+            $resultBox.append('<br/><h2><b> You also matched with:</b></h2> <ul>')
+            for (let i = 0; i < maxes.length; i++) {
+                $resultBox.append('<b><li>' + maxes[i] + '</li></b>');
+            }
+             }
         $resultBox.append('</ul> <br> <p>Schedule a consultation with <b><a href="mailto:Rahsaan.Graham@ucf.edu">Rahsaan.Graham@ucf.edu</a></b> to learn more about your program and many others!</p>')
     //Animated croll
     $("body, html").animate({
