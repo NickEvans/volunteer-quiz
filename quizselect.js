@@ -55,7 +55,7 @@ const ORGINFO = [
         info: "Public Allies Central Florida is a 10 month long full-time apprenticeship at a local nonprofit as well as a leadership development program. Best for individuals who want to rpomote social justice and social equity by engaging with their community."
     }
 
-]
+];
 // Bonnieblue would like a dropdown menu for the additional matches for the user
 var Quiz = function () {
     var self = this;
@@ -71,7 +71,6 @@ var Quiz = function () {
         //Activate selected choice
         $choice.removeClass("disabled");
         $choice.addClass("active");
-
     }
 
     //Returns true if each question has a selected response
@@ -82,7 +81,6 @@ var Quiz = function () {
                 answersChosen++;
             }
         });
-
         return (answersChosen >= QUIZLENGTH);
     }
 
@@ -96,7 +94,6 @@ var Quiz = function () {
     }
 
     this._calcResult = function () {
-
         // orgsAnswers[0] = Teach for America
         const teachForAmerica = new Array(["a", "b", "c", "d", "e"], ["a", "b", "e"], ["c", "e"], ["a"]);
         // orgsAnswers[1] = Peace Corps
@@ -175,16 +172,13 @@ var Quiz = function () {
         let $resultBox = $(".result");
         // gets a random result from the calc'd array of maxes
         
-        let result = self._randResult(self._calcResult()); // prints out a random number like 8
-       
+        let result = self._randResult(self._calcResult()); // prints out a random number 
         let maxes = self._printMaxes();// returns an array of strings of org names
-      
         // removes the rand Max
         for (let i = 0; i < maxes.length; i++) {
             if (maxes[i] === ORGNAMES[result])
                 maxes.splice(i, 1); 
             }
-       
         $resultBox.addClass("resultComplete jumbotron");
         $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGNAMES[result] + "</u> </h1> <p>" + ORGINFO[result].info +"</p>");
        //prevents adding only the randomized result to the bottom
