@@ -171,18 +171,8 @@ var Quiz = function () {
     this._showResult = function () {
         let $resultBox = $(".result");
         
-<<<<<<< HEAD
-        let result = self._randResult(self._calcResult()); // prints out a random number 
-        let maxes = self._printMaxes();// returns an array of strings of org names
-        // removes the rand Max
-        for (let i = 0; i < maxes.length; i++) {
-            if (maxes[i] === ORGNAMES[result])
-                maxes.splice(i, 1); 
-            }
-=======
         let resultList = self._calcResult();
       
->>>>>>> 72f5b01e6e81d406420ae0098328a75dfdcc71df
         $resultBox.addClass("resultComplete jumbotron");
         $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[resultList[0]].name + "</u> </h1> <p>" + ORGINFO[resultList[0]].info +"</p>");
  
