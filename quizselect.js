@@ -118,7 +118,7 @@ var Quiz = function () {
 
         let finalPoints = new Array(10).fill(0);
 
-        
+
         //Fisher-Yates shuffle algorithm
         function shuffle(a) {
             var j, x, i;
@@ -164,57 +164,58 @@ var Quiz = function () {
         }
 
         userChoices.forEach(addPoints);
-        
+
         return shuffledMatchList(finalPoints);
     }
 
     this._showResult = function () {
         let $resultBox = $(".result");
-        
+
         let resultList = self._calcResult();
-      
+
         $resultBox.addClass("resultComplete jumbotron");
-        $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[resultList[0]].name + "</u> </h1> <p>" + ORGINFO[resultList[0]].info +"</p>");
- 
+        $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[resultList[0]].name + "</u> </h1> <p>" + ORGINFO[resultList[0]].info + "</p>");
         //Display additional matches
-        if (resultList.length > 1){
+        if (resultList.length > 1) {
             $resultBox.append('<br/><h2><b> You also matched with:</b></h2> <ul>');
             for (let i = 1; i < resultList.length; i++) {
-                $resultBox.append('<b><li>' + ORGINFO[resultList[i]].name + '</li></b>');
+                $resultBox.append('<b><li><h4>' + ORGINFO[resultList[i]].name + '</h4></li></b>');
+                $resultBox.append('<p>' + ORGINFO[resultList[i]].info + '</p>');
+
             }
             $resultBox.append('</ul><br>');
-         }
+        }
 
         $resultBox.append('<p>Schedule a consultation with <b><a href="mailto:Rahsaan.Graham@ucf.edu">Rahsaan.Graham@ucf.edu</a></b> to learn more about your program and many others!</p>');
 
-    //Animated croll
-    $("body, html").animate({
-        scrollTop: (($resultBox).offset().top - 25) //25px padding
-    }, 500);
-}
-// These functions bind the user's click to an array that  lists their their choices
-this._bindEvents = function () {
-    let jumboList = new Array();
-    $(".jumbotron").each(function () {
-        jumboList.push($(this));
-    });
-
-    $(".quiz-choice").on("click", function () {
-        let $choice = $(this);
-        let $question = $choice.closest("ul[data-quiz-question]");
-        self._selectAnswer($choice, $question);
-
-        if (self._isComplete()) {
-            self._showResult();
-            return;
-        }
-
-        //Animated scroll to next Jumbotron element
+        //Animated croll
         $("body, html").animate({
-            scrollTop: (jumboList[parseInt($question.data("quiz-question"))]).offset().top - 25
+            scrollTop: (($resultBox).offset().top - 25) //25px padding
         }, 500);
-    });
-}
+    }
+    // These functions bind the user's click to an array that  lists their their choices
+    this._bindEvents = function () {
+        let jumboList = new Array();
+        $(".jumbotron").each(function () {
+            jumboList.push($(this));
+        });
+
+        $(".quiz-choice").on("click", function () {
+            let $choice = $(this);
+            let $question = $choice.closest("ul[data-quiz-question]");
+            self._selectAnswer($choice, $question);
+
+            if (self._isComplete()) {
+                self._showResult();
+                return;
+            }
+
+            //Animated scroll to next Jumbotron element
+            $("body, html").animate({
+                scrollTop: (jumboList[parseInt($question.data("quiz-question"))]).offset().top - 25
+            }, 500);
+        });
+    }
 }
 
 var quiz = new Quiz();
