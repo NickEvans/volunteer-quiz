@@ -178,13 +178,15 @@ var Quiz = function () {
         //Display additional matches
         if (resultList.length > 1) {
             $resultBox.append('<br/><h2><b> You also matched with:</b></h2> <ul>');
+
             for (let i = 1; i < resultList.length; i++) {
-                $resultBox.append('<b><li><h4>' + ORGINFO[resultList[i]].name + '</h4></li></b>');
-                $resultBox.append('<p>' + ORGINFO[resultList[i]].info + '</p>');
+                $resultBox.append('<b><li data-toggle="collapse" href="#collapseExample'+i+'" role="button" aria-expanded="false" aria-controls="collapseExample" id="info-' + i +'"><h4 >' + ORGINFO[resultList[i]].name + '</h4></li></b>');
+                $resultBox.append('<p class="collapse" id="collapseExample' + i +'">' + ORGINFO[resultList[i]].info + '</p>')
+                }
 
             }
             $resultBox.append('</ul><br>');
-        }
+        
 
         $resultBox.append('<p>Schedule a consultation with <b><a href="mailto:Rahsaan.Graham@ucf.edu">Rahsaan.Graham@ucf.edu</a></b> to learn more about your program and many others!</p>');
 
