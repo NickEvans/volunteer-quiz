@@ -4,7 +4,7 @@ const ORGINFO = [
 
     {
         name: "Teach For America",
-        info: "We're a non-profit, leadership development organization that helps young leaders use their talents to end educational inequality in America. In the long-term, our network of more than 50,000 leaders continue to channel their collective talents to create the systemic-level change needed for kids across the country."
+        info: "We're a non-profit, leadership development organization that helps young leaders use their talents to end educational inequality in America. In the long-term, our network of more than 50,000 leaders continue to channel their collective talents to create the systemic-level change needed for kids across the country. As a full-time teacher, your salary typically range from $33k-$58k and are entitled to medical benefits, depending on your location. This program is a great fit for strong  leaders & achievers with excellent organizational abilities, interpersonal skills, and deep belief in the potential of all children. More information on our website: <a href='https://www.teachforamerica.org' target='_blank'>www.teachforamerica.org</a> ."
     },
 
     {
