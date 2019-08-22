@@ -180,7 +180,7 @@ var Quiz = function () {
             $resultBox.append('<br/><h2><b> You also matched with:</b></h2> <ul>');
 
             for (let i = 1; i < resultList.length; i++) {
-                $resultBox.append('<b><li data-toggle="collapse" href="#collapseExample'+i+'" role="button" aria-expanded="false" aria-controls="collapseExample" id="info-' + i +'"><h4 >' + ORGINFO[resultList[i]].name + '</h4></li></b>');
+                $resultBox.append('<li data-toggle="collapse" href="#collapseExample' + i + '" role="button" aria-expanded="false" aria-controls="collapseExample" id="info-' + i + '"><h4 ><b><u>' + ORGINFO[resultList[i]].name + '</b></u></h4></li>');
                 $resultBox.append('<p class="collapse" id="collapseExample' + i +'">' + ORGINFO[resultList[i]].info + '</p>')
                 }
 
