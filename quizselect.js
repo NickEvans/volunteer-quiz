@@ -1,7 +1,4 @@
-//Number of quiz questions
 const QUIZLENGTH = 4;
-
-const ORGNAMES = new Array("Teach For America", "Peace Corps", "Operation AmeriCorps", "National Health Corps", "Orlando Cares", "City Year", "Florida Conservation Corps", "National Civilian Community Corps", "Orlando Partnership for School Success", "Public Allies");
 
 const ORGINFO = [
 
@@ -124,6 +121,19 @@ var Quiz = function () {
 
         let finalPoints = new Array(10).fill(0);
 
+        
+        //Fisher-Yates shuffle algorithm
+        function shuffle(a) {
+            var j, x, i;
+            for (i = a.length - 1; i > 0; i--) {
+                j = Math.floor(Math.random() * (i + 1));
+                x = a[i];
+                a[i] = a[j];
+                a[j] = x;
+            }
+            return a;
+        }
+
         function addPoints(choice, j) {
             for (var i = 0; i < orgsAnswers.length; i++) {
                 if (orgsAnswers[i][j].includes(choice)) {
@@ -132,8 +142,8 @@ var Quiz = function () {
             }
         }
 
-        //Returns index of highest value (randomly breaks ties)
-        function maxList(a) {
+        //Returns shuffled list of matches
+        function shuffledMatchList(a) {
             var i = 0,
                 maxList = new Array(),
                 max = 0;
@@ -153,49 +163,33 @@ var Quiz = function () {
             }
 
             //Return the list of user's relate options & maxes
-            return (maxList);
+            return shuffle(maxList);
         }
 
         userChoices.forEach(addPoints);
+        
+        return shuffledMatchList(finalPoints);
+    }
 
-        return maxList(finalPoints);
-    }
-    this._randResult = function (a) {
-        return a[Math.floor(Math.random() * a.length)]
-    }
-    this._printMaxes = function () {
-        let maxes = self._calcResult();
-        let maxNames = new Array();
-        for (var i = 0; i < maxes.length; i++) {
-            maxNames[i] = ORGNAMES[maxes[i]];
-        }
-        return maxNames;
-    }
     this._showResult = function () {
         let $resultBox = $(".result");
-        // gets a random result from the calc'd array of maxes
         
-        let result = self._randResult(self._calcResult()); // prints out a random number like 8
-       
-        let maxes = self._printMaxes();// returns an array of strings of org names
+        let resultList = self._calcResult();
       
-        // removes the rand Max
-        for (let i = 0; i < maxes.length; i++) {
-            if (maxes[i] === ORGNAMES[result])
-                maxes.splice(i, 1); 
-            }
-       
         $resultBox.addClass("resultComplete jumbotron");
-        $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGNAMES[result] + "</u> </h1> <p>" + ORGINFO[result].info +"</p>");
-       //prevents adding only the randomized result to the bottom
-        if (maxes.length > 1){
-            $resultBox.append('<br/><h2><b> You also matched with:</b></h2> <ul>')
-            for (let i = 0; i < maxes.length; i++) {
-                $resultBox.append('<b><li>' + maxes[i] + '</li></b>');
+        $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[resultList[0]].name + "</u> </h1> <p>" + ORGINFO[resultList[0]].info +"</p>");
+ 
+        //Display additional matches
+        if (resultList.length > 1){
+            $resultBox.append('<br/><h2><b> You also matched with:</b></h2> <ul>');
+            for (let i = 1; i < resultList.length; i++) {
+                $resultBox.append('<b><li>' + ORGINFO[resultList[i]].name + '</li></b>');
             }
             $resultBox.append('</ul><br>');
-            }
-        $resultBox.append('<p>Schedule a consultation with <b><a href="mailto:Rahsaan.Graham@ucf.edu">Rahsaan.Graham@ucf.edu</a></b> to learn more about your program and many others!</p>')
+         }
+
+        $resultBox.append('<p>Schedule a consultation with <b><a href="mailto:Rahsaan.Graham@ucf.edu">Rahsaan.Graham@ucf.edu</a></b> to learn more about your program and many others!</p>');
+
     //Animated croll
     $("body, html").animate({
         scrollTop: (($resultBox).offset().top - 25) //25px padding
