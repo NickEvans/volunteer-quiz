@@ -206,7 +206,7 @@ var Quiz = function () {
             let $choice = $(this);
             let $question = $choice.closest("ul[data-quiz-question]");
             self._selectAnswer($choice, $question);
-
+// if the isComplete() is true, run showResult()
             if (self._isComplete()) {
                 self._showResult();
                 return;
