@@ -4,17 +4,17 @@ const ORGINFO = [
 
     {
         name: "Teach For America",
-        info: "We're a non-profit, leadership development organization that helps young leaders use their talents to end educational inequality in America. In the long-term, our network of more than 50,000 leaders continue to channel their collective talents to create the systemic-level change needed for kids across the country. As a full-time teacher, your salary typically range from $33k-$58k and are entitled to medical benefits, depending on your location. This program is a great fit for strong  leaders & achievers with excellent organizational abilities, interpersonal skills, and deep belief in the potential of all children. More information on our website: <a href='https://www.teachforamerica.org' target='_blank'>www.teachforamerica.org</a> ."
+        info: "We're a non-profit, leadership development organization that helps young leaders use their talents to end educational inequality in America. In the long-term, our network of more than 50,000 leaders continue to channel their collective talents to create the systemic-level change needed for kids across the country. As a full-time teacher, your salary typically range from $33k-$58k and are entitled to medical benefits, depending on your location. This program is a great fit for strong leaders & achievers with excellent organizational abilities, interpersonal skills, and deep belief in the potential of all children. More information on our website: <a href='https://www.teachforamerica.org' target='_blank'>www.teachforamerica.org</a> ."
     },
 
     {
         name: "Peace Corps",
-        info: "Peace Corps is a catalyst for grassroots international development and cultural exchange powered by volunteers ready to use their energy, ingenuity, and skills to work towards reducing inequality and creating opportunities in communities around the world."
+        info: "Peace Corps is a catalyst for grassroots international development and cultural exchange powered by volunteers ready to use their energy, ingenuity, and skills to work towards reducing inequality and creating opportunities in communities in over 60 countries. After new members complete their 2-3 months pre-service training, they are able to work in several focus areas of service with a living stipend, health & dental care benefits, housing, student loan deferment, and the chance to earn a TEFL certificate. This program is a great fit for students that are adaptable, respectful, open-minded, disclipined, and work well on a team."
     },
 
     {
         name: "Operation AmeriCorps",
-        info: "A collaborative partnership between the City of Orlando, Orange Country Public Schools, and After-School All-Stars, the goal of Operation AmeriCorps is to use national service to ensure high school graduation and a post high school pathway for targeted students. Members will work with students and be responsible for promoting academic, social, and personal success."
+        info: "A collaborative partnership between the City of Orlando, Orange Country Public Schools, and After-School All-Stars, the goal of Operation AmeriCorps is to use national service to ensure high school graduation and a post-high school pathway for targeted students towards the paths of military enlistment, 4-year university, trade/technical school, or employment. For one year, members will work with students and be responsible for promoting academic, social, and personal success. Members are paid a salary a living allowance at or above $13,500 a year, along with the options of Loan Forbearance, Child Care allowances, and upon completion of the program, members are eligible for a the Segal Education Award valued at the current amount of the Pell Grant."
     },
 
     {
@@ -44,7 +44,7 @@ const ORGINFO = [
 
     {
         name: "Orlando Partnership for School Success",
-        info: "Orlando-Partnership for School Success is a collaborative partnership between the Citt of Orlando, Orange County Public School and After-School Alll-Stars. The mission of the project is to expand academic and social supports for at-risk youth in high poverty neighborhoods during the school day, after school and in summer. Each volunteer is assigned 40 children for whom they will be responsible for promoting their academic, social, and personal success for one year. Best suited for bilingual, community driven individuals"
+        info: "Orlando-Partnership for School Success is a collaborative partnership between the City of Orlando, Orange County Public School and After-School All-Stars. The mission of the project is to expand academic and social supports for at-risk youth in high poverty neighborhoods during the school day, after school and in summer. Each volunteer is assigned 40 children for whom they will be responsible for promoting their academic, social, and personal success for one year. Best suited for bilingual, community driven individuals"
     },
 
     {
@@ -181,12 +181,12 @@ var Quiz = function () {
 
             for (let i = 1; i < resultList.length; i++) {
                 $resultBox.append('<li data-toggle="collapse" href="#collapseExample' + i + '" role="button" aria-expanded="false" aria-controls="collapseExample" id="info-' + i + '"><h4 ><b><u>' + ORGINFO[resultList[i]].name + '</b></u></h4></li>');
-                $resultBox.append('<p class="collapse" id="collapseExample' + i +'">' + ORGINFO[resultList[i]].info + '</p>')
-                }
-
+                $resultBox.append('<p class="collapse" id="collapseExample' + i + '">' + ORGINFO[resultList[i]].info + '</p>')
             }
-            $resultBox.append('</ul><br>');
-        
+
+        }
+        $resultBox.append('</ul><br>');
+
 
         $resultBox.append('<p>Schedule a consultation with <b><a href="mailto:Rahsaan.Graham@ucf.edu">Rahsaan.Graham@ucf.edu</a></b> to learn more about your program and many others!</p>');
 
@@ -206,7 +206,7 @@ var Quiz = function () {
             let $choice = $(this);
             let $question = $choice.closest("ul[data-quiz-question]");
             self._selectAnswer($choice, $question);
-// if the isComplete() is true, run showResult()
+            // if the isComplete() is true, run showResult()
             if (self._isComplete()) {
                 self._showResult();
                 return;
