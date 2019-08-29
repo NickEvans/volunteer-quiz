@@ -173,19 +173,25 @@ var Quiz = function () {
 
         let resultList = self._calcResult();
 
+
+
+
+
+
         $resultBox.addClass("resultComplete jumbotron");
         $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[resultList[0]].name + "</u> </h1> <p>" + ORGINFO[resultList[0]].info + "</p>");
         //Display additional matches
-        if (resultList.length > 1) {
-            $resultBox.append('<br/><h2><b> You also matched with:</b></h2> <ul>');
-
+        const resultToString = () => {
+            var myStr;
             for (let i = 1; i < resultList.length; i++) {
-                $resultBox.append('<li data-toggle="collapse" href="#collapseExample' + i + '" role="button" aria-expanded="false" aria-controls="collapseExample" id="info-' + i + '"><h4 ><b><u>' + ORGINFO[resultList[i]].name + '</b></u></h4></li>');
-                $resultBox.append('<p class="collapse" id="collapseExample' + i + '">' + ORGINFO[resultList[i]].info + '</p>')
+                myStr += '<li data-toggle="collapse" href="#collapseExample' + i + '" role="button" aria-expanded="false" aria-controls="collapseExample" id="info-' + i + '"><h4><b><u>' + ORGINFO[resultList[i]].name + '</u></b></h4></li><p class="collapse" id="collapseExample' + i + '">' + ORGINFO[resultList[i]].info + '</p>';
             }
-
+            return myStr;
         }
-        $resultBox.append('</ul><br>');
+        if (resultList.length > 1) {
+            $resultBox.append('<h2><b> You also matched with:</b></h2> <ul>' + resultToString() + '</ul><br>');
+        }
+
 
 
         $resultBox.append('<p>Schedule a consultation with <b><b><a href="mailto:Rahsaan.Graham@ucf.edu">Rahsaan.Graham@ucf.edu</a></b></b> to learn more about your program and many others!</p>');
