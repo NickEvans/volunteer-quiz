@@ -173,16 +173,12 @@ var Quiz = function () {
 
         let resultList = self._calcResult();
 
-
-
-
-
-
         $resultBox.addClass("resultComplete jumbotron");
-        $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[resultList[0]].name + "</u> </h1> <p>" + ORGINFO[resultList[0]].info + "</p>");
+
+        $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[resultList[0]].name + "</u></p> </h1> <p>" + ORGINFO[resultList[0]].info + "</p>");
         //Display additional matches
         const resultToString = () => {
-            var myStr;
+            var myStr = '';
             for (let i = 1; i < resultList.length; i++) {
                 myStr += '<li data-toggle="collapse" href="#collapseExample' + i + '" role="button" aria-expanded="false" aria-controls="collapseExample" id="info-' + i + '"><h4><b><u>' + ORGINFO[resultList[i]].name + '</u></b></h4></li><p class="collapse" id="collapseExample' + i + '">' + ORGINFO[resultList[i]].info + '</p>';
             }
