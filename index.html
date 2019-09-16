@@ -7,7 +7,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147457642-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'UA-147457642-1');
@@ -20,9 +23,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/bootstrap.min.css" type="text/css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="buzzstyle.css" type="text/css">
+    <link rel="stylesheet" href="/styles/vendor/bootstrap.min.css" type="text/css">
+    <!-- BUzzfeed Quiz CSS -->
+    <link rel="stylesheet" href="/styles/buzzstyle.css" type="text/css">
 
     <title>Buzzfeed Quiz Template</title>
 </head>
@@ -401,18 +404,14 @@
         </div>
 
     </div>
-
+    <!-- Buzzfeed Quiz Javascript -->
+    <script src="js/quizselect.js"></script>
     <!-- JQuery -->
-    <script src="/jquery.min.js"></script>
-
-    <!-- Custom Quiz Javascript -->
-    <script src="quizselect.js"></script>
-
+    <script src="js/vendor/jquery.min.js"></script>
     <!-- Optional JavaScript -->
-    <script src="/popper.min.js"">
-    </script>
-    <script src="/bootstrap.min.js">
-    </script>
+    <script src="js/vendor/popper.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="js/vendor/bootstrap.min.js"></script>
 
 </body>
 
