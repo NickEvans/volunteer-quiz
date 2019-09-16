@@ -35,3 +35,7 @@ h1 {
 .bg-light::after {
     background-color: #000;
 }
+.center{
+    justify-content: center;
+    text-align: center;
+}
