@@ -54,7 +54,7 @@ const ORGINFO = [
     {
         name: "Orlando Partnership for School Success",
         info: "Orlando-Partnership for School Success is a collaborative partnership between the City of Orlando, Orange County Public School and After-School All-Stars. The mission of the project is to expand academic and social supports for at-risk youth in high poverty neighborhoods during the school day, after school and in summer. Each volunteer is assigned 40 children for whom they will be responsible for promoting their academic, social, and personal success for one year. Best suited for bilingual, community driven individuals. Volunteers receive benefits including a bi-weekly living allowance of $562.50, healthcare benefits, childcare allowance for active members, loan forbearance, and eligibility for the Segal Education Award valued at the current amount of the Pell Grant in that year. Great for individuals with a strong desire to serve with a committment to diversity, teamwork, self-development, and desire to work with youth. Billingual individuals skilled within the Microsoft Office Suite is a plus.",
-        link: "<strong><a href='http://www.cityoforlando.net/fpr/operation-americorps/' target='_blank'>here</a></strong>"
+        link: "<strong><a href='http://www.cityoforlando.net/fpr/operation-americorps/' target='_blank'>Visit Website</a></strong>"
     },
 
     {
@@ -185,8 +185,7 @@ var Quiz = function () {
         let resultList = self._calcResult();
 
         $resultBox.addClass("resultComplete jumbotron");
-
-        $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[resultList[0]].name + "</u></p> </h1> <p>" + ORGINFO[resultList[0]].info + "</p>");
+        $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[resultList[0]].name + "</u></p> </h1> <p>" + ORGINFO[resultList[0]].info + '<br><button class="btn btn-info">' + ORGINFO[resultList[0]].link + '</button>' + '</p>');
         //Display additional matches
         const resultToString = () => {
             var myStr = '';
