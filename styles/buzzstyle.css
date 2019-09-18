@@ -35,7 +35,14 @@ h1 {
 .bg-light::after {
     background-color: #000;
 }
-.center{
-    justify-content: center;
+button{
+    margin:auto;
+    width: auto;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+body{
+    display: flex;
 }
