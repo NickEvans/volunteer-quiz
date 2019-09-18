@@ -47,7 +47,8 @@ const ORGINFO = [
     {
         name: "National Civilian Community Corps",
         info: "AmeriCorps National Civilian Community Corps & FEMA Corps is a full-time, residential, team-based program for young adults between 18-24 that runs for 10-12 months compromised of teams of 8-10 members. This organization focuses on disaster relief, infrastructure improvement, environmental stewardship, and urban and rural development. Members receive benefits including a living allowance of roughly $90 a week before taxes and team leaders receive $250 dollars before taxes. Members also receive lodging, transportation, uniform, meals, and health-care benefits at no cost. Federal student loan forbearance, childcare allowance, and up to 9 college credit hours. This is a great opportunity for passionate service-minded individuals who wish to travel across the country.",
-        link: "<strong><a href='http://www.americorps.gov/nccc/' target='_blank'>our website</a></strong> or <strong><a href='http://www.americorps.gov/femacorps/' target='_blank'>FEMA Corps's website</a></strong>"
+        link: "<strong><a href='https://www.nationalservice.gov/programs/americorps/americorps-programs/americorps-nccc' target='_blank'>Visit Website</a></strong>"
+          
     },
 
     {
@@ -190,7 +191,8 @@ var Quiz = function () {
         const resultToString = () => {
             var myStr = '';
             for (let i = 1; i < resultList.length; i++) {
-                myStr += '<li data-toggle="collapse" href="#collapseExample' + i + '" role="button" aria-expanded="false" aria-controls="collapseExample" id="info-' + i + '"><h4><strong><u>' + ORGINFO[resultList[i]].name + '</u></strong></h4></li><p class="collapse" id="collapseExample' + i + '">' + ORGINFO[resultList[i]].info + '</p>';
+                myStr += '<li data-toggle="collapse" href="#collapseExample' + i + '" role="button" aria-expanded="false" aria-controls="collapseExample" id="info-' + i + '"><h4><strong><u>' + ORGINFO[resultList[i]].name + '</u></strong></h4></li><p class="collapse" id="collapseExample' + i + '">' + ORGINFO[resultList[i]].info + '<br><button class ="btn btn-info">' + ORGINFO[resultList[i]].link + '</button>'; + '</p> ';
+                
             }
             return myStr;
         }
