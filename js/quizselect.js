@@ -5,43 +5,43 @@ const ORGINFO = [
     {
         name: "Teach For America",
         info: "We're a non-profit, leadership development organization that helps young leaders use their talents to end educational inequality in America. In the long-term, our network of more than 50,000 leaders continue to channel their collective talents to create the systemic-level change needed for kids across the country. As a full-time teacher, your salary typically range from $33k-$58k and are entitled to medical benefits, depending on your location. This program is a great fit for strong leaders & achievers with excellent organizational abilities, interpersonal skills, and deep belief in the potential of all children.",
-        link: "<strong><a href='https://www.teachforamerica.org' target='_blank'>www.teachforamerica.org</a></strong>"
+        link: "<strong><a href='https://www.teachforamerica.org' target='_blank'>Visit Website</a></strong>"
     },
 
     {
         name: "Peace Corps",
         info: "Peace Corps is a catalyst for grassroots international development and cultural exchange powered by volunteers ready to use their energy, ingenuity, and skills to work towards reducing inequality and creating opportunities in communities in over 60 countries. After new members complete their 2-3 months pre-service training, they are able to work in several focus areas of service with a living stipend, health & dental care benefits, housing, student loan deferment, and the chance to earn a TEFL certificate. This program is a great fit for students that are adaptable, respectful, open-minded, disclipined, and work well on a team.",
-        link: "<strong><a href='https://www.peacecorps.gov/' target='_blank'>www.peacecorps.gov/</a></strong>"
+        link: "<strong><a href='https://www.peacecorps.gov/' target='_blank'>Visit Website</a></strong>"
     },
 
     {
         name: "Operation AmeriCorps",
         info: "A collaborative partnership between the City of Orlando, Orange Country Public Schools, and After-School All-Stars, the goal of Operation AmeriCorps is to use national service to ensure high school graduation and a post-high school pathway for targeted students towards the paths of military enlistment, 4-year university, trade/technical school, or employment. For one year, members will work with students and be responsible for promoting academic, social, and personal success. Members are paid a salary a living allowance at or above $13,500 a year, along with the options of Loan Forbearance, Child Care allowances, and upon completion of the program, members are eligible for a the Segal Education Award valued at the current amount of the Pell Grant.",
-        link: ""
+        link: "<strong><a href='http://www.cityoforlando.net/fpr/operation-americorps/'target='_blank'>Visit Website</a></strong>"
     },
 
     {
         name: "National Health Corps",
         info: "National Health Corps has worked to expand access to health care and health education in under-served communities for more than 20 years. For 10 ½ months, members will work to provide an array of health screenings and wellness education to those in need in addition for ways individuals in communities can find resources and benefits to promote a healthy, sustainable life. The volunteer members also receive benefits such as childcare assistance, student loan forbearance, health coverage, a $13,992 stipend over the course of their service, and a $5920.00 education award upon completion of their term. A great fit for individuals who are interested addressing health disparities with a perspective informed by experience in low-income communities, and system challenges of poverty and racism.",
-        link: "<strong><a href='http://nationalhealthcorps.org/' target='_blank'>http://nationalhealthcorps.org/</a></strong>"
+        link: "<strong><a href='http://nationalhealthcorps.org/' target='_blank'>Visit Website</a></strong>"
     },
 
     {
         name: "Orlando Cares",
         info: "Orlando Cares works to address community issues through volunteerism. Volunteers serve at City Hall or at local nonprofit organizations to develop programs to recruit, screen, train, engage, and monitor volunteers from the community. Mentor students to their improve wellness, science & reading literacy in K-5 schools and preschools. Members able to dedicate a year of full-time service, will have benefits including a living allowance, healthcare benefits, relocation allowance, and a $5,815 Segal Education Award or a $1,500 cashh stipend at the end of the service year. This program is a great program for individuals with a passion to promote youth education and development with a devotion to community service.",
-        link: "<strong><a href='https://www.cityoforlando.net/oca/orlando-cares/' target='_blank'>Orlando Cares' website</a></strong>"
+        link: "<strong><a href='https://www.cityoforlando.net/oca/orlando-cares/' target='_blank'>Visit Website</a></strong>"
     },
 
     {
         name: "City Year",
         info: "CityYear is a gap year program from AmeriCorps that invites young leaders to serve 11 months as a tutor and mentor to students Central Florida in K-12 schools and communities. Members receive multiple benefits including a bimonthly living stipend of $630, health insurance, and a $6000 Segal Education award at the end of the service year along with eligibility to many other scholarships. It is a great opportunity for servant leaders interested in civic engagement and community education promotion.X",
-        link: "<strong><a href='https://www.floridastateparks.org/flcc' target='_blank'>Florida Conservation Corp's website</a></strong>"
+        link: "<strong><a href='https://www.floridastateparks.org/flcc' target='_blank'>Visit Website</a></strong>"
     },
 
     {
         name: "Florida Conservation Corps",
         info: "Florida Conservation Corps provides hands-on service learning opportunities designed to develop leaders in the fields of cultural preservation, land management, and regional outreach through their A.N.T, T.R.E.C, & R.O.A.R programs. Full-time volunteer members commit themselves to 11 months and 1,700 hours of service (~40hrs/week) and receive benefits including a monthly living allowance, health insurance, childcare assistance, free access to state parks, student loan forbearance, and upon completion of their service receive a Segal Education Award Volunteers develop confidence, knowledge and abilities necessary to become better environmentalists, conservationists, and stewards of their community and environment.",
-        link: "<strong><a href='https://www.floridastateparks.org/flcc' target='_blank'>Florida Conservation Corp's website</a></strong>"
+        link: "<strong><a href='https://www.floridastateparks.org/flcc' target='_blank'>Visit Website</a></strong>"
     },
 
     {
