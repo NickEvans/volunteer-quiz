@@ -185,12 +185,12 @@ var Quiz = function () {
         let resultList = self._calcResult();
 
         $resultBox.addClass("resultComplete jumbotron");
-        $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[resultList[0]].name + "</u></p> </h1> <p>" + ORGINFO[resultList[0]].info + '<br><button class="btn btn-info">' + ORGINFO[resultList[0]].link + '</button>' + '</p>');
+        $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[resultList[0]].name + "</u></p> </h1> <p>" + ORGINFO[resultList[0]].info + '<div class="my-3"></div><button class="d-flex flex-row justify-content-center btn btn-info">' + ORGINFO[resultList[0]].link + '</button>' + '</p>');
         //Display additional matches
         const resultToString = () => {
             var myStr = '';
             for (let i = 1; i < resultList.length; i++) {
-                myStr += '<li data-toggle="collapse" href="#collapseExample' + i + '" role="button" aria-expanded="false" aria-controls="collapseExample" id="info-' + i + '"><h4><strong><u>' + ORGINFO[resultList[i]].name + '</u></strong></h4></li><p class="collapse" id="collapseExample' + i + '">' + ORGINFO[resultList[i]].info + '<br><button class ="btn btn-info">' + ORGINFO[resultList[i]].link + '</button>'; + '</p> ';
+                myStr += '<li data-toggle="collapse" href="#collapseExample' + i + '" role="button" aria-expanded="false" aria-controls="collapseExample" id="info-' + i + '"><h4><strong><u>' + ORGINFO[resultList[i]].name + '</u></strong></h4></li><p class="collapse" id="collapseExample' + i + '">' + ORGINFO[resultList[i]].info + '<br><button class ="my-3 d-flex flex-row justify-content-center btn btn-info">' + ORGINFO[resultList[i]].link + '</button>'; + '</p> ';
                 
             }
             return myStr;
@@ -198,7 +198,7 @@ var Quiz = function () {
         if (resultList.length > 1) {
             $resultBox.append('<h2><strong> You also matched with:</strong></h2> <ul>' + resultToString() + '</ul><br>');
         }
-        $resultBox.append('<p>Schedule a consultation with Rahsaan Graham to learn more about your program and many others!</p><button class="btn btn-info center"><strong><a href="mailto:Rahsaan.Graham@ucf.edu">Schedule Consultation</a></strong></button>');
+        $resultBox.append('<p>Schedule a consultation with Rahsaan Graham to learn more about your program and many others!</p><button class="btn btn-info d-flex flex-row justify-content-center"><strong><a href="mailto:Rahsaan.Graham@ucf.edu">Schedule Consultation</a></strong></button>');
 
         //Animated croll
         $("body, html").animate({
