@@ -183,14 +183,16 @@ var Quiz = function () {
         let $resultBox = $(".result");
 
         let resultList = self._calcResult();
+        
 
         $resultBox.addClass("resultComplete jumbotron");
         $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[resultList[0]].name + "</u></p> </h1> <p>" + ORGINFO[resultList[0]].info + '<button class="my-3 d-flex flex-row justify-content-center btn btn-info"><strong><a href="' + ORGINFO[resultList[0]].link + '" target="_blank">Visit Website</a></strong></button></p>');
         //Display additional matches
+        
         const resultToString = () => {
             var myStr = '';
             for (let i = 1; i < resultList.length; i++) {
-                myStr += '<li data-target="#collapseInfo-' + i + '"data-toggle="collapse" role="button" aria-expanded="false" id="info-' + i + '"><h4><strong><u>' + ORGINFO[resultList[i]].name + '</u></strong></h4></li><p class="collapse" id="collapseInfo-' + i + '">' + ORGINFO[resultList[i]].info + '<br><button class ="my-3 d-flex flex-row justify-content-center btn btn-info"><strong><a href="' + ORGINFO[resultList[i]].link + '" target="_blank">Visit Website</a></strong></button></p>';
+                myStr += '<li><a href="#collapseInfo-' + i + '"data-toggle="collapse" role="button" aria-expanded="false" id="info-' + i + '"><h4><strong><u>' + ORGINFO[resultList[i]].name + '</u></strong></h4></a></li><p class="collapse" id="collapseInfo-' + i + '">' + ORGINFO[resultList[i]].info + '<br><button class ="my-3 d-flex flex-row justify-content-center btn btn-info"><strong><a href="' + ORGINFO[resultList[i]].link + '" target="_blank">Visit Website</a></strong></button></p>';
 
             }
             return myStr;
