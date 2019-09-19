@@ -185,7 +185,7 @@ var Quiz = function () {
         let resultList = self._calcResult();
 
         $resultBox.addClass("resultComplete jumbotron");
-        $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[resultList[0]].name + "</u></p> </h1> <p>" + ORGINFO[resultList[0]].info + '<div class="my-3"></div><button class="d-flex flex-row justify-content-center btn btn-info">' + ORGINFO[resultList[0]].link + '</button>' + '</p>');
+        $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[resultList[0]].name + "</u></p> </h1> <p>" + ORGINFO[resultList[0]].info + '<button class="my-3 d-flex flex-row justify-content-center btn btn-info">' + ORGINFO[resultList[0]].link + '</button>' + '</p>');
         //Display additional matches
         const resultToString = () => {
             var myStr = '';
