@@ -192,7 +192,7 @@ var Quiz = function () {
         const resultToString = () => {
             var myStr = '';
             for (let i = 1; i < resultList.length; i++) {
-                myStr += '<li><a href="#collapseInfo-' + i + '"data-toggle="collapse" role="button" aria-expanded="false" id="info-' + i + '"><h4><strong><u>' + ORGINFO[resultList[i]].name + '</u></strong></h4></a></li><p class="collapse" id="collapseInfo-' + i + '">' + ORGINFO[resultList[i]].info + '<br><button class ="my-3 d-flex flex-row justify-content-center btn btn-info"><strong><a href="' + ORGINFO[resultList[i]].link + '" target="_blank">Visit Website</a></strong></button></p>';
+                myStr += '<li ><a class="collapsed" href="#collapseInfo-' + i + '"data-toggle="collapse" role="button" aria-expanded="false" id="info-' + i + '"><h4><strong><u>' + ORGINFO[resultList[i]].name + '</u></strong></h4></a></li><p class="collapse" id="collapseInfo-' + i + '">' + ORGINFO[resultList[i]].info + '<br><button class ="my-3 d-flex flex-row justify-content-center btn btn-info"><strong><a href="' + ORGINFO[resultList[i]].link + '" target="_blank">Visit Website</a></strong></button></p>';
 
             }
             return myStr;
