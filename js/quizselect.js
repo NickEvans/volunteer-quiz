@@ -193,7 +193,7 @@ var Quiz = function () {
         if (resultList.length > 1) {
             $resultBox.append('<h2><strong> You also matched with:</strong></h2> <ul id="accordion">' + resultToString() + '</ul><br>');
         }
-        $resultBox.append('<p>Schedule a consultation with Rahsaan Graham to learn more about your program and many others!</p><button class="btn btn-info d-flex flex-row justify-content-center"><strong><a href="mailto:Rahsaan.Graham@ucf.edu">Schedule Consultation</a></strong></button>');
+        $resultBox.append('<p class="text-center">Schedule a consultation with Rahsaan Graham to learn more about your program and many others!</p><button class="btn btn-primary btn-lg d-flex flex-row justify-content-center"><strong><a href="mailto:Rahsaan.Graham@ucf.edu">Schedule Consultation</a></strong></button>');
 
         //Animated scroll
         $("body, html").animate({
