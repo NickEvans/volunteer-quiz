@@ -129,8 +129,6 @@ var Quiz = function () {
 
         let finalPoints = new Array(10).fill(0);
 
-
-        //Fisher-Yates shuffle algorithm : Swaps the 
         function shuffle(a) {
             var j, x, i;
             for (i = a.length - 1; i > 0; i--) {
@@ -150,27 +148,23 @@ var Quiz = function () {
             }
         }
 
-        //Returns shuffled list of matches
         function shuffledMatchList(a) {
             var i = 0,
                 maxList = new Array(),
                 max = 0;
 
-            //Find max
             for (i = 0; i < a.length; i++) {
                 if (a[i] > max) {
                     max = a[i];
                 }
             }
 
-            //Catalogue all occurences of max
             for (i = 0; i < a.length; i++) {
                 if (a[i] == max) {
                     maxList.push(i);
                 }
             }
 
-            //Return the list of user's relate options & maxes
             return shuffle(maxList);
         }
 
@@ -186,13 +180,12 @@ var Quiz = function () {
         
 
         $resultBox.addClass("resultComplete jumbotron");
-        $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[resultList[0]].name + "</u></p> </h1> <p>" + ORGINFO[resultList[0]].info + '<button class="my-3 d-flex flex-row justify-content-center btn btn-info"><strong><a href="' + ORGINFO[resultList[0]].link + '" target="_blank">Visit Website</a></strong></button></p>');
-        //Display additional matches
+        $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[resultList[0]].name + "</u></p> </h1> <p>" + ORGINFO[resultList[0]].info + '<a class="my-3 d-flex flex-row justify-content-center btn btn-primary btn-lg" href="' + ORGINFO[resultList[0]].link + '" target="_blank"><strong>Visit Website</strong></a></p>');
         
         const resultToString = () => {
             var myStr = '';
             for (let i = 1; i < resultList.length; i++) {
-                myStr += '<li ><a class="collapsed" href="#collapseInfo-' + i + '"data-toggle="collapse" role="button" aria-expanded="false" id="info-' + i + '"><h4><strong><u>' + ORGINFO[resultList[i]].name + '</u></strong></h4></a></li><p class="collapse" id="collapseInfo-' + i + '">' + ORGINFO[resultList[i]].info + '<br><button class ="my-3 d-flex flex-row justify-content-center btn btn-info"><strong><a href="' + ORGINFO[resultList[i]].link + '" target="_blank">Visit Website</a></strong></button></p>';
+                myStr += '<li ><a class="collapsed" href="#collapseInfo-' + i + '"data-toggle="collapse" role="button" aria-expanded="false" id="info-' + i + '"><h4><strong><u>' + ORGINFO[resultList[i]].name + '</u></strong></h4></a></li><p class="collapse" id="collapseInfo-' + i + '">' + ORGINFO[resultList[i]].info + '<br><a class ="btn btn-primary btn-lg my-3 d-flex flex-row justify-content-center " href="' + ORGINFO[resultList[i]].link + '" target="_blank"><strong>Visit Website</strong></a></p>';
 
             }
             return myStr;
@@ -202,12 +195,12 @@ var Quiz = function () {
         }
         $resultBox.append('<p>Schedule a consultation with Rahsaan Graham to learn more about your program and many others!</p><button class="btn btn-info d-flex flex-row justify-content-center"><strong><a href="mailto:Rahsaan.Graham@ucf.edu">Schedule Consultation</a></strong></button>');
 
-        //Animated croll
+        //Animated scroll
         $("body, html").animate({
-            scrollTop: (($resultBox).offset().top - 25) //25px padding
-        }, 500); // animation runs for 1/2 sec
+            scrollTop: (($resultBox).offset().top - 25) //25px for visual padding
+        }, 500);
     }
-    // These functions bind the user's click to an array that  lists their their choices
+
     this._bindEvents = function () {
         let jumboList = new Array();
         $(".jumbotron").each(function () {
@@ -218,7 +211,6 @@ var Quiz = function () {
             let $choice = $(this);
             let $question = $choice.closest("ul[data-quiz-question]");
             self._selectAnswer($choice, $question);
-            // if the isComplete() is true, run showResult()
             if (self._isComplete()) {
                 self._showResult();
                 return;
