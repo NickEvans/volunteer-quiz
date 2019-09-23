@@ -45,4 +45,5 @@ button{
 }
 body{
     display: flex;
+    background: #000 !important;
 }
