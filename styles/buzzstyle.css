@@ -20,13 +20,13 @@ ul {
     list-style: none;
 }
 .result {
-    color: #fff;
+    /* color: #fff; */
 }
 .result a{
     color: #fff;
 }
 .resultComplete {
-   background: #000;
+   /*background: #000; */
 }
 h1 {
     text-align: center;

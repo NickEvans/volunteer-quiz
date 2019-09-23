@@ -180,12 +180,12 @@ var Quiz = function () {
         
 
         $resultBox.addClass("resultComplete jumbotron");
-        $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[resultList[0]].name + "</u></p> </h1> <p>" + ORGINFO[resultList[0]].info + '<a class="my-3 mx-auto btn btn-primary btn-lg" href="' + ORGINFO[resultList[0]].link + '" target="_blank"><strong>Visit Website</strong></a></p>');
+        $resultBox.html("<h1><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[resultList[0]].name + "</u></p> </h1> <p>" + ORGINFO[resultList[0]].info + '<a class="my-3 mx-auto btn btn-primary btn-lg justify-content-center" href="' + ORGINFO[resultList[0]].link + '" target="_blank"><strong>Visit Website</strong></a></p>');
         
         const resultToString = () => {
             var myStr = '';
             for (let i = 1; i < resultList.length; i++) {
-                myStr += '<li ><a class="collapsed" href="#collapseInfo-' + i + '"data-toggle="collapse" role="button" aria-expanded="false" id="info-' + i + '"><h4><strong><u>' + ORGINFO[resultList[i]].name + '</u></strong></h4></a></li><p class="collapse" id="collapseInfo-' + i + '">' + ORGINFO[resultList[i]].info + '<br><a class ="btn btn-primary btn-lg my-3 mx-auto " href="' + ORGINFO[resultList[i]].link + '" target="_blank"><strong>Visit Website</strong></a></p>';
+                myStr += '<li ><a class="collapsed" href="#collapseInfo-' + i + '"data-toggle="collapse" role="button" aria-expanded="false" id="info-' + i + '"><h4><strong><u>' + ORGINFO[resultList[i]].name + '</u></strong></h4></a></li><p class="collapse" id="collapseInfo-' + i + '">' + ORGINFO[resultList[i]].info + '<br><a class ="btn btn-primary btn-lg my-3 mx-auto justify-content-center" href="' + ORGINFO[resultList[i]].link + '" target="_blank"><strong>Visit Website</strong></a></p>';
 
             }
             return myStr;
