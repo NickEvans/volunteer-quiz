@@ -5,7 +5,7 @@
     transition: transform .25s ease;
 }
 .zoom-effect:hover img {
-    transform: scale(1.25);
+    transform: scale(1.112);
 }
 .disabled img {
     opacity: 0.35;
@@ -45,5 +45,4 @@ button{
 }
 body{
     display: flex;
-    background: #000 !important;
 }
