@@ -23,10 +23,10 @@ ul {
     /* color: #fff; */
 }
 .result a{
-    color: #000;
+   /* color: #000;  */
 }
 .resultComplete {
-   background: #fff; 
+   background: #42abaa; 
 }
 h1 {
     text-align: center;
