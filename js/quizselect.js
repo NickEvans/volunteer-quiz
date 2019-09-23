@@ -180,7 +180,7 @@ var Quiz = function () {
         
 
         $resultBox.addClass("resultComplete jumbotron");
-        $resultBox.html("<h1 class='mb-4'><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[resultList[0]].name + "</u></p> </h1> <p class='text-center'>" + ORGINFO[resultList[0]].info + '<a class="my-3 mx-auto btn btn-primary btn-lg" href="' + ORGINFO[resultList[0]].link + '" target="_blank"><strong>Visit Website</strong></a></p>');
+        $resultBox.html("<h1 class='mb-4'><p>Here is your result!</p> <p>You matched with <u>" + ORGINFO[resultList[0]].name + "</u></p> </h1> <p>" + ORGINFO[resultList[0]].info + '</p><p class="text-center"><a class="my-3 mx-auto btn btn-primary btn-lg" href="' + ORGINFO[resultList[0]].link + '" target="_blank"><strong>Visit Website</strong></a></p>');
         
         const resultToString = () => {
             var myStr = '';
@@ -193,7 +193,7 @@ var Quiz = function () {
         if (resultList.length > 1) {
             $resultBox.append('<h2><strong> You also matched with:</strong></h2> <ul id="accordion">' + resultToString() + '</ul><br>');
         }
-        $resultBox.append('<p class="text-center">Schedule a consultation with Rahsaan Graham to learn more about your program and many others!</p><button class="btn btn-primary btn-lg d-flex flex-row justify-content-center"><strong><a href="mailto:Rahsaan.Graham@ucf.edu">Schedule Consultation</a></strong></button>');
+        $resultBox.append('<p class="text-center">Schedule a consultation with Rahsaan Graham to learn more about your program and many others!</p><a class="btn btn-primary btn-lg d-flex flex-row justify-content-center" href="mailto:Rahsaan.Graham@ucf.edu"><strong>Schedule Consultation</strong></a>');
 
         //Animated scroll
         $("body, html").animate({
