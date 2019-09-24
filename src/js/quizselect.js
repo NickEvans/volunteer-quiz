@@ -127,7 +127,7 @@ var Quiz = function () {
 
         const userChoices = this._tallyResponses();
 
-        let finalPoints = new Array(10).fill(0);
+        let finalPoints = new Array(ORGINFO.length).fill(0);
 
         function shuffle(a) {
             var j, x, i;
