@@ -193,7 +193,7 @@ var Quiz = function () {
         if (resultList.length > 1) {
             $resultBox.append('<hr class="my-4"><h2><strong> You also matched with:</strong></h2> <ul id="accordion">' + resultToString() + '</ul><br>');
         }
-        $resultBox.append('<hr class="my-4"><p class="text-center">Schedule a consultation with Rahsaan Graham to learn more about your program and many others. Be sure to screenshot your result!</p><p class="text-center"><a class="btn btn-primary btn-lg" href="mailto:Rahsaan.Graham@ucf.edu?subject=AmeriCorps Appointment&body=I got ' + ORGINFO[resultList[0]].name + ' as my result. Could I schedule an appointment to learn more about it and my other options to get involved? What time & date do you have available?""><strong>Schedule Consultation</strong></a></p>');
+        $resultBox.append('<hr class="my-4"><p class="text-center">Schedule a consultation with Rahsaan Graham to learn more about your program and many others. Be sure to screenshot your result!</p><p class="text-center"><a class="btn btn-primary btn-lg" href="mailto:Rahsaan.Graham@ucf.edu?subject=AmeriCorps Appointment&body=I got ' + ORGINFO[resultList[0]].name + ' as my result. Could I schedule an appointment to learn more about it and my other options to get involved?""><strong>Schedule Consultation</strong></a></p>');
         //Animated scroll
         $("body, html").animate({
             scrollTop: (($resultBox).offset().top - 25) //25px for visual padding
