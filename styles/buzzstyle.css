@@ -65,6 +65,14 @@ h1 {
     float: left;
     background-color: #000;
 }
+.credits {
+    color: #6b6b6b;
+    text-align: center;
+    width: 100%;
+    padding: 2em 0 2em 0;
+    margin: 0;
+    overflow: hidden;
+}
 button{
     margin:auto;
     width: auto;
@@ -87,7 +95,6 @@ body{
     margin: 0;
     padding: 0;
 }
-
 /* Responsive font size */
 @media only screen and (max-width: 768px) {
     .display-4 {
