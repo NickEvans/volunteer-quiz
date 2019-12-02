@@ -63,7 +63,6 @@ h1 {
     float: left;
     background-color: #000;
 }
-
 button{
     margin:auto;
     width: auto;
@@ -77,3 +76,10 @@ body{
     margin: 0;
     padding: 0;
 }
+
+/* Responsive font size */
+@media only screen and (max-width: 768px) {
+    .display-4 {
+      font-size: 2.5em;
+    }
+  }
