@@ -35,6 +35,15 @@ h1 {
 .bg-light::after {
     background-color: #000;
 }
+.top-bar-visual {
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+}
 button{
     margin:auto;
     width: auto;
